@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Marca Clinica dental Gimenez Turrillas">
+  <!-- Doble anillo -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#115E59" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#C4A574" stroke-width="1"/>
+
+  <!-- Molar equilibrado: corona ancha, cuello, dos raices abiertas -->
+  <path
+    fill="#115E59"
+    d="
+      M 76 52
+      C 76 40, 86 34, 100 34
+      C 114 34, 124 40, 124 52
+      C 124 62, 122 70, 118 78
+      C 114 88, 110 94, 108 104
+      C 106 114, 110 124, 116 134
+      C 108 130, 102 120, 100 110
+      C 98 120, 92 130, 84 134
+      C 90 124, 94 114, 92 104
+      C 90 94, 86 88, 82 78
+      C 78 70, 76 62, 76 52
+      Z"
+  />
+  <!-- Destello -->
+  <path
+    fill="#FFFFFF"
+    opacity="0.3"
+    d="M86 50 C88 44, 104 43, 108 50 C110 55, 106 62, 100 64 C96 65, 90 62, 88 58 C86 55, 85 52, 86 50 Z"
+  />
+
+  <!-- La Concha / sonrisa -->
+  <path
+    fill="none"
+    stroke="#C4A574"
+    stroke-width="2.8"
+    stroke-linecap="round"
+    d="M48 148 C64 134, 80 126, 100 126 C120 126, 136 134, 152 148"
+  />
+  <path
+    fill="none"
+    stroke="#C4A574"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    opacity="0.65"
+    d="M58 156 C72 146, 84 140, 100 140 C116 140, 128 146, 142 156"
+  />
+</svg>

@@ -1,0 +1,63 @@
+.root {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.overlaySoft {
+  /* Atmósfera legible: imagen más presente + velo ligero teal. */
+  background:
+    linear-gradient(
+      105deg,
+      rgb(17 94 89 / 0.07) 0%,
+      transparent 50%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(243 246 245 / 0.4) 0%,
+      rgb(243 246 245 / 0.52) 45%,
+      rgb(243 246 245 / 0.64) 100%
+    );
+}
+
+.overlayStrong {
+  background: linear-gradient(
+    180deg,
+    rgb(243 246 245 / 0.74) 0%,
+    rgb(243 246 245 / 0.82) 45%,
+    rgb(243 246 245 / 0.88) 100%
+  );
+}
+
+.overlayLeft {
+  background: linear-gradient(
+    105deg,
+    rgb(243 246 245 / 0.9) 0%,
+    rgb(243 246 245 / 0.78) 40%,
+    rgb(243 246 245 / 0.48) 70%,
+    rgb(243 246 245 / 0.32) 100%
+  );
+}
+
+@media (max-width: 899px) {
+  .overlayLeft {
+    background: linear-gradient(
+      180deg,
+      rgb(243 246 245 / 0.82) 0%,
+      rgb(243 246 245 / 0.74) 55%,
+      rgb(243 246 245 / 0.64) 100%
+    );
+  }
+}

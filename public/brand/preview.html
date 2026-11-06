@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Logo · Giménez Turrillas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #f3f6f5;
+      color: #163038;
+      padding: 24px;
+    }
+    .wrap { max-width: 960px; margin: 0 auto; }
+    .meta {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #c4a574;
+      margin: 0 0 8px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+    .lead {
+      color: #4e646b;
+      max-width: 60ch;
+      line-height: 1.5;
+      margin: 0 0 24px;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 700px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #d5e0de;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .card.dark { background: #115e59; border-color: #0c4a46; }
+    .label {
+      align-self: flex-start;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0;
+      color: #4e646b;
+    }
+    .card.dark .label { color: #c4a574; }
+    img { display: block; height: auto; }
+    .mark { width: 80px; }
+    .horiz { width: 100%; }
+    .stack { width: 120px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="meta">Concepto · Sonrisa de La Concha</p>
+    <h1>Sistema de logo</h1>
+    <p class="lead">Sello simétrico: molar nítido + curva dorada (bahía y sonrisa).</p>
+    <div class="grid">
+      <section class="card">
+        <p class="label">Símbolo</p>
+        <img class="mark" src="logo-mark.svg?v=8" alt="Marca" />
+      </section>
+      <section class="card dark">
+        <p class="label">Sobre color de acción</p>
+        <img class="mark" src="logo-mark-on-dark.svg?v=8" alt="Marca oscura" />
+      </section>
+      <section class="card">
+        <p class="label">Horizontal</p>
+        <img class="horiz" src="logo-horizontal.svg?v=8" alt="Logo horizontal" />
+      </section>
+      <section class="card">
+        <p class="label">Apilado</p>
+        <img class="stack" src="logo-stacked.svg?v=8" alt="Logo apilado" />
+      </section>
+    </div>
+  </div>
+</body>
+</html>

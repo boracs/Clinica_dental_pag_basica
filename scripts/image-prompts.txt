@@ -1,0 +1,37 @@
+Prompts de diseño usados para los fondos atmosféricos
+(GenerateImage de Cursor falló en esta sesión; se materializaron
+con un generador controlado en scripts/generate-atmospherics.py
+siguiendo estos briefs.)
+
+1) bg-home-hero.jpg — Hero inicio
+Editorial architectural photograph for a boutique dental clinic website
+hero background. Soft natural daylight through tall windows into a calm
+consultation space — warm limestone and soft sage-green accents, muted
+teal (#115E59) wood trim, pale sage walls (#F3F6F5), brushed oak furniture,
+empty dental chair softly out of focus on the right. Composition: 16:9,
+generous empty left third for text. Morning north light, no harsh
+fluorescents. Palette: sage, soft teal, warm stone. Style: quiet
+Scandinavian-meets-Basque medical interior, editorial magazine feel,
+subtle film grain. Avoid: stock smiles, people, faces, hands, close-up
+instruments, cold clinical white, purple, gold luxury, text, logos, CGI.
+
+2) bg-home-calm.jpg — Sección “Puedes venir solo a preguntar” / visita
+Extreme soft-focus abstract of clean clinical surfaces: pale ceramic,
+soft sage linen, blurred eucalyptus and gentle teal glass, suggesting
+care without showing dentistry. Mostly empty soft field with subtle
+texture. Diffused window glow. Palette: #F3F6F5, #115E59, #C4A574.
+Style: high-end wellness editorial. Avoid: people, teeth, smiles,
+instruments, cold white OR, purple, text, logos.
+
+3) bg-about-hero.jpg — Hero Sobre nosotros / dirección
+Calm waiting corridor with soft daylight, pale sage plaster, simple
+wooden bench with linen throw, plant, doorway to a softly lit room.
+Empty of people. Open negative space on the left for headline.
+Late-afternoon soft light. Trustworthy, quiet, human-scale — not a
+hospital. Avoid: stock waiting-room clichés, people, logos, cold LEDs.
+
+4) bg-contact.jpg — Hero y cierre Contacto
+Quiet reception desk corner: pale oak desk, cream notepad, muted sage
+desk phone, ceramic tray, natural daylight from the left. Approachable
+and organized. Palette aligned to brand teal and sand accent.
+Avoid: people, hands, teeth, readable screens, logos, text, purple.

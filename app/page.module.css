@@ -1,150 +1,364 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+.section {
+  position: relative;
+  padding-block: var(--space-12);
+}
 
-  --text-primary: #000;
-  --text-secondary: #666;
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--space-16);
+  }
+}
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+/* Más aire tras el hero; el resto alterna ritmo. */
+.sectionAfterHero {
+  padding-top: var(--space-16);
+}
 
+@media (min-width: 768px) {
+  .sectionAfterHero {
+    padding-top: var(--space-24);
+  }
+
+  .sectionAtmosphere {
+    padding-block: var(--space-24);
+  }
+
+  .sectionDoctor {
+    padding-block: var(--space-24);
+  }
+}
+
+.sectionSurface {
+  background: var(--color-surface);
+  border-block: 1px solid var(--color-border);
+}
+
+.sectionAtmosphere {
+  isolation: isolate;
+  border-block: 1px solid rgb(213 224 222 / 0.7);
+}
+
+.sectionAtmosphere > :not(:first-child) {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  padding-top: var(--space-8);
+  padding-bottom: 40px;
+  min-height: min(64vh, 560px);
   display: flex;
-  flex: 1;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
 }
 
-.main {
-  display: flex;
-  flex: 1;
+@media (min-width: 768px) {
+  .hero {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+    min-height: min(70vh, 640px);
+  }
+}
+
+.hero > :not(:first-child) {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
 }
 
-.intro {
+.heroGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@media (min-width: 900px) {
+  .heroGrid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+}
+
+.heroCopy {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: var(--space-4);
   text-align: left;
-  gap: 24px;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+.heroCopy h1 {
+  max-width: 28ch;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+.heroLead {
+  max-width: 65ch;
+  color: var(--color-text);
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
+.heroActions {
+  margin-top: var(--space-2);
   width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
 }
 
-.ctas a {
+@media (min-width: 640px) {
+  .heroActions {
+    width: auto;
+  }
+}
+
+.photoBlock {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-control);
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-control);
+  border: 1px solid var(--color-border);
+}
+
+.photoLabel {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+/* Móvil: título → cuerpo, siempre. */
+.sectionSplit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.sectionTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.sectionTitle :global(.section-label) {
+  margin-bottom: 0;
+}
+
+.sectionTitle h2 {
+  max-width: 18ch;
+  text-wrap: pretty;
+  color: var(--color-text);
+}
+
+.sectionBody {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.sectionBody p {
+  max-width: 58ch;
+  color: var(--color-text);
+}
+
+.sectionBody p:not(.pending-note):not(.gapNote) {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* Escritorio: título izquierda, cuerpo derecha. Sin zigzag.
+   Columna de título acotada para evitar el «pasillo» vacío. */
+@media (min-width: 768px) {
+  .sectionSplit {
+    display: grid;
+    grid-template-columns: minmax(13rem, 26ch) minmax(0, 1fr);
+    column-gap: var(--space-12);
+    row-gap: var(--space-4);
+    align-items: start;
+  }
+
+  .sectionTitle {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .sectionBody {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .sectionTitle h2 {
+    font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+    line-height: 1.15;
+    max-width: none; /* la columna (~20ch) ya acota la medida */
+  }
+}
+
+/* Banda centrada: rompe el ritmo del split. */
+.sectionCentered {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.sectionCentered h2 {
+  max-width: 22ch;
+}
+
+.sectionCentered p {
+  max-width: 46ch;
+}
+
+.centeredActions {
+  margin-top: var(--space-2);
+}
+
+/* Dónde: panel de contacto. */
+.locationSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+.locationCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 100%;
+  padding: var(--space-6);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+}
+
+@media (min-width: 768px) {
+  .locationCard {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-8);
+    align-items: start;
+    padding: var(--space-8);
+  }
+}
+
+.locationInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.locationActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* El doctor: foto y texto en dos columnas. */
+.doctorSplit {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .doctorSplit {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    column-gap: var(--space-12);
+    align-items: center;
+  }
+}
+
+.doctorCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.doctorCopy h2 {
+  max-width: 18ch;
+}
+
+.gapNote {
+  margin-top: 0;
+  max-width: 48ch;
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--color-border);
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.actions {
+  margin-top: var(--space-1);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .actions {
+    width: auto;
+  }
+
+  .actions :global(.btn) {
+    width: auto;
+  }
+}
+
+.address {
+  margin: 0;
+  max-width: 36ch;
+  color: var(--color-text);
+}
+
+.contactLines {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contactLines li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+.contactLabel {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: var(--color-text-muted);
+}
+
+.contactLines a {
+  font-weight: 600;
+  color: var(--color-action);
   width: fit-content;
-  font-weight: 500;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--button-secondary-border);
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-}
-
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
-}
-
-.code {
-  font-family: var(--font-geist-mono);
-  font-size: 0.9em;
-  background: color-mix(in srgb, currentColor 8%, transparent);
-  padding: 0.1em 0.4em;
-  border-radius: 6px;
+.contactLines a:hover {
+  text-decoration: underline;
 }
